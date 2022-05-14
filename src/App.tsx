@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container } from '@mui/material'
+import { CSSProperties } from '@mui/styled-engine'
+import InitialScreen from './screens/InitialScreen'
+import Header from './components/Header'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <Container maxWidth="md" sx={appContainer}>
+                <InitialScreen />
+            </Container>
+        </>
+    )
 }
 
-export default App;
+const appContainer: CSSProperties = {
+    display: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+}
+
+export default App
